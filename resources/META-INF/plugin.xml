@@ -1,28 +1,12 @@
 <idea-plugin>
-  <id>ru.misha.plugin.replace editor</id>
-  <name>Replace editor</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <id>ru.misha.plugin.from russian to english layout</id>
+  <name>From Russian to English Layout</name>
+  <vendor email="Lampad0307@yandex.ru" url="https://github.com/Drone98">Mikhail Bogdanov</vendor>
 
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
-
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="145.0"/>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+  <description>
+    This plugin change selected text from Russian to English language.
+    Changing based on layout.
+  </description>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
@@ -30,9 +14,9 @@
 
   <actions>
    <action
-           class="EditorIllustration"
-           id="EditorBasics.EditorIllustrations"
-           text="Editor Basics"
+           class="FromRussianToEnglish"
+           id="FromRussianToEnglish"
+           text="Change layout"
            description="Illustrates how to plug an action">
      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
      <keyboard-shortcut first-keystroke="control alt r" keymap="$default"/>
