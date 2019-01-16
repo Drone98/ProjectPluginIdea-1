@@ -18,18 +18,18 @@ public class EditorIllustration extends AnAction {
 
     @Override
     public void actionPerformed(final AnActionEvent e){
-        System.out.println("action is coming");
         final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
         final Project project = e.getProject();
 
         final Document document = editor.getDocument();
         final SelectionModel selectionModel = editor.getSelectionModel();
+        System.out.println(selectionModel.getSelectedText());
 
         final int start = selectionModel.getSelectionStart();
         final int end = selectionModel.getSelectionEnd();
-
+        KeyboardMapping keyboardMapping = new KeyboardMapping();
         WriteCommandAction.runWriteCommandAction(project, () ->
-                document.replaceString(start, end, "Replacement")
+                document.replaceString(start, end, keyboardMapping.changeLayout(selectionModel.getSelectedText()))
         );
         selectionModel.removeSelection();
     }
